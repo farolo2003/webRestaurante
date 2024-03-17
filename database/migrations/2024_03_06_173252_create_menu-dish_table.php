@@ -17,8 +17,8 @@ return new class extends Migration
 
             // Definir las claves foráneas
             $table->string('relacion');
-            $table->foreign('id_menu')->references('id')->on('menu')->onDelete('cascade');
-            $table->foreign('id_dish')->references('id')->on('dish')->onDelete('cascade');
+            $table->foreign('id_menu')->references('id')->on('menu')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_dish')->references('id')->on('dish')->onDelete('cascade')->onUpdate('cascade');;
 
             // Definir la clave primaria compuesta
             $table->primary(['id_menu', 'id_dish']);
